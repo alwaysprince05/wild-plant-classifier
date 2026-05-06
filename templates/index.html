@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildPlant AI | Botanical Classifier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <span class="badge">Advanced AI Classifier</span>
+                <h1>WildPlant <span class="accent">AI</span></h1>
+                <p class="subtitle">Next-generation identification of 35 wild edible plant species</p>
+                <nav>
+                    <a href="/" class="active">Classifier</a>
+                    <a href="/info">Model Analytics</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <div class="upload-icon">📷</div>
+                    <h2>Upload Plant Image</h2>
+                    <p>Click to select or drag and drop an image</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <button class="btn-primary" onclick="document.getElementById('fileInput').click()">
+                        Choose Image
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-container">
+                    <div class="image-preview-container">
+                        <div class="image-card">
+                            <h3>Uploaded Specimen</h3>
+                            <div class="preview-wrapper">
+                                <img id="previewImage" alt="Uploaded plant">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="predictions-container">
+                        <div class="predictions-card">
+                            <h3>Classification Results</h3>
+                            <div class="loading" id="loading">
+                                <div class="spinner"></div>
+                                <p>Analyzing botanical features...</p>
+                            </div>
+                            <div id="predictionResults" style="display: none;">
+                                <!-- Results will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>80.67%</h3>
+                    <p>Accuracy</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌿</div>
+                    <h3>35</h3>
+                    <p>Plant Species</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🖼️</div>
+                    <h3>16,535</h3>
+                    <p>Training Images</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🤖</div>
+                    <h3>ResNet-34</h3>
+                    <p>Architecture</p>
+                </div>
+            </div>
+
+            <!-- Safety disclaimer removed for cleaner aesthetic -->
+        </main>
+
+        <footer>
+            <p>Built with PyTorch & Flask | <a href="https://github.com/alwaysprince05/wild-plant-classifier" target="_blank">GitHub Repository</a></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
