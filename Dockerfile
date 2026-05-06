@@ -24,11 +24,15 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy the application code
 COPY . .
 
-# Create a non-root user and switch to it
-RUN id -u user >/dev/null 2>&1 || useradd -m -u 1000 user
+# Set up a non-root user for Hugging Face
+# HF Spaces automatically run as user 1000
+RUN useradd -m -u 1000 user || echo "User already exists"
 USER user
 ENV HOME=/home/user \
-	PATH=/home/user/.local/bin:$PATH
+    PATH=/home/user/.local/bin:$PATH
+
+WORKDIR $HOME/app
+COPY --chown=user . $HOME/app
 
 # Expose the port
 EXPOSE 7860

@@ -1,19 +1,13 @@
-# Core AI Dependencies
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch
 torchvision
 numpy
 Pillow
-
-# Web Framework
 Flask
 Werkzeug
-
-# Data Science & Analytics
 pandas
 matplotlib
 scikit-learn
 scikit-plot==0.3.7
 scipy
-
-# Utilities
 tqdm
