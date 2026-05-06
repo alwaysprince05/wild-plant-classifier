@@ -25,7 +25,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # Create a non-root user and switch to it
-RUN useradd -m -u 1000 user
+RUN id -u user >/dev/null 2>&1 || useradd -m -u 1000 user
 USER user
 ENV HOME=/home/user \
 	PATH=/home/user/.local/bin:$PATH
