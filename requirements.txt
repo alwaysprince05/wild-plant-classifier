@@ -11,3 +11,4 @@ scikit-learn
 scikit-plot==0.3.7
 scipy
 tqdm
+gunicorn
