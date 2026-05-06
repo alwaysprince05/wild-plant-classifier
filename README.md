@@ -9,6 +9,12 @@ pinned: false
 
 # Wild Edible Plant Classifier
 
+## 🚀 Live Demo
+**[WildPlant AI on Hugging Face Spaces](https://huggingface.co/spaces/alwaysprince05e/wild-plant-classifier)**
+
+---
+
+
 This repository focuses on a Wild Edible Plant Classifier that compares the performance of three state-of-the-art CNN architectures: MobileNet v2, GoogLeNet, and ResNet-34. The project aims to classify 35 classes of wild edible plants using Transfer Learning.
 
 
